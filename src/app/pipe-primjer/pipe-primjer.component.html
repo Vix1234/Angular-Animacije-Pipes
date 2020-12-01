@@ -1,1 +1,20 @@
-<p>pipe-primjer works!</p>
+<div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <input type="text" [(ngModel)]="filterPo">
+        <br>
+        <button class="btn btn-primary" (click)="dodajNovi()">Dodaj Korisnika</button>
+        <hr>
+        <h1>Status: {{asyncExample | async}}</h1>
+          <ul class="list-group">
+              <li class="list-group-item" 
+              *ngFor="let korisnik of korisnici | filter: filterPo: 'status'">
+                <strong>{{korisnik.ime | skracivanje:6}}</strong>   
+                /-----/{{korisnik.tip | uppercase}}
+                  /----/{{korisnik.datumLogovanja | date: 'fullDate' | uppercase}}
+                <span class="badge">/{{korisnik.status}}</span>
+              </li>
+          </ul>
+        <hr>      
+    </div>
+  </div>

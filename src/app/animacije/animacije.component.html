@@ -1,1 +1,35 @@
-<p>animacije works!</p>
+<div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <button class="btn btn-secondary" (click)="animiraj()">Animacija</button>
+        <button class="btn btn-secondary" (click)="skupi()">Skupi</button>
+        <hr>
+        <div  
+        style="width:150px;height:150px"
+        [@animirajDiv]="stanje"
+        (@animirajDiv.start)="animacijaPocela($event)"
+        (@animirajDiv.done)="animacijaZavrsila($event)">
+        </div>
+        <br>
+        <div 
+        style="width:150px;height:150px"
+        [@animirajSkupljanje]="animacijaSazvjezdicom">
+        </div>
+        <hr>
+      </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-md-12">
+          <input type="text" #input>
+          <button class="btn btn-primary" (click)="dodaj(input.value)">Dodaj</button>
+          <hr>
+          <ul class="list-group">
+            <li class="list-group-item" [@lista] (click)="obrisi(stavka)" *ngFor="let stavka of stavke">
+              {{stavka}}
+            </li>
+          </ul>
+        </div>
+      </div>
+      <hr>
+  </div>

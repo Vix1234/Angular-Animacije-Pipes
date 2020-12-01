@@ -5,16 +5,24 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AnimacijeComponent } from './animacije/animacije.component';
 import { PipePrimjerComponent } from './pipe-primjer/pipe-primjer.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { SkracivanjePipe } from './customPipes/skracivanje.pipe';
+import { FilterPipe } from './customPipes/filter.pipe';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     AnimacijeComponent,
-    PipePrimjerComponent
+    PipePrimjerComponent,
+    SkracivanjePipe,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
