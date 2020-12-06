@@ -10,7 +10,8 @@ export class FilterPipe implements PipeTransform {
     if(value.length === 0 || zaFiltriranje === ''){
       return value;
     }
-
+    console.log(zaFiltriranje);
+    console.log(filtriranjePo);
     const filtriraniKorisnici=[];
     for(let korisnik of value){
       if(korisnik[filtriranjePo] === zaFiltriranje){

@@ -8,6 +8,7 @@ import {
   // ...
 } from '@angular/animations';
 
+import {slideInAnimation} from './customAnimacije';
 
 import {RouterOutlet} from '@angular/router';
 
@@ -16,11 +17,15 @@ import {RouterOutlet} from '@angular/router';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
   animations:[
+    slideInAnimation
     //logika za animaciju
   ]
 })
 export class AppComponent {
   title = 'Angular-Animacije-Pipes';
 
+  prepareRoute(outlet: RouterOutlet) {
+    return outlet && outlet.activatedRouteData && outlet.activatedRouteData.animation;
+  }
  
 }

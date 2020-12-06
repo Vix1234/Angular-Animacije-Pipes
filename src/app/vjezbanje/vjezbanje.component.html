@@ -1,0 +1,13 @@
+<div>
+    <label>Search:</label>
+    <br>
+    <input type="text" [(ngModel)]="filterPo">
+    <br>
+</div>
+<div class="row" style="margin-top: 3%;">    
+    <app-korisnik class="col-md-6" 
+    *ngFor="let korisnik of useri | filter: filterPo: 'tipUsera';let i=index"
+    [korisnik]="korisnik" 
+    [index]="i" >
+    </app-korisnik>
+</div>
